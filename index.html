@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Christopher Medina">
+    <title>Quiniela Liga MX</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style type="text/css" media="screen">
+    body {
+        padding: 20px;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .label-team {
+        vertical-align: middle;
+        margin: 0px 0px 0px 0px !important;
+        line-height: 3;
+    }
+
+    .col-sm-1 {
+        display: -webkit-inline-box;
+    }
+
+    img {
+        margin-left: 10px;
+        height: 60px;
+        width: auto;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5 class="text-center">Quiniela Apertura 2019</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row form-group">
+                        <div class="col-sm-1">
+                            <h5 class="text-center label-team">1.</h5>
+                            <img src="https://cdn2.mediotiempo.com/uploads/media/2019/07/08/escudos-liga-mx-santos-x-3.png" />
+                        </div>
+                        <div class="col-sm-11"><input type="text" id="team1" class="form-control" style="width:30%; margin-top: 10px;" disabled=""></div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-1">
+                            <h5 class="text-center label-team">2.</h5>
+                            <img src="https://cdn2.mediotiempo.com/uploads/media/2019/05/08/escudos-liga-mx-leon-1.png" />
+                        </div>
+                        <div class="col-sm-11"><input type="text" id="team2" class="form-control" style="width:30%; margin-top: 10px;" disabled=""></div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-1">
+                            <h5 class="text-center label-team">3.</h5>
+                            <img src="https://cdn2.mediotiempo.com/uploads/media/2019/08/04/escudos-liga-mx-tigres-5.png" />
+                        </div>
+                        <div class="col-sm-11"><input type="text" id="team3" class="form-control" style="width:30%; margin-top: 10px;" disabled=""></div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-1">
+                            <h5 class="text-center label-team">4.</h5>
+                            <img src="https://static.mediotiempo.com/0x60/bs/mt/sports/production/soccer/teams/75f90387-9a2a-435b-9d41-490bbf065c2a.png" />
+                        </div>
+                        <div class="col-sm-11"><input type="text" id="team4" class="form-control" style="width:30%; margin-top: 10px;" disabled=""></div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-1">
+                            <h5 class="text-center label-team">5.</h5>
+                            <img src="https://cdn2.mediotiempo.com/uploads/media/2019/05/08/escudos-liga-mx-necaxa-1.png" />
+                        </div>
+                        <div class="col-sm-11"><input type="text" id="team5" class="form-control" style="width:30%; margin-top: 10px;" disabled=""></div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-1">
+                            <h5 class="text-center label-team">6.</h5>
+                            <img src="https://static.mediotiempo.com/0x60/bs/mt/sports/production/soccer/teams/8bc5add7-e409-457e-9418-94092a33b5ee.png" />
+                        </div>
+                        <div class="col-sm-11"><input type="text" id="team6" class="form-control" style="width:30%; margin-top: 10px;" disabled=""></div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-1">
+                            <h5 class="text-center label-team">7.</h5>
+                            <img src="https://cdn2.mediotiempo.com/uploads/media/2019/05/08/escudos-liga-mx-morelia-1.png" />
+                        </div>
+                        <div class="col-sm-11"><input type="text" id="team7" class="form-control" style="width:30%; margin-top: 10px;" disabled=""></div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-1">
+                            <h5 class="text-center label-team">8.</h5>
+                            <img src="https://static.mediotiempo.com/0x60/bs/mt/sports/production/soccer/teams/6d726835-171b-46c2-a3e7-77668b8fbbe7.png" />
+                        </div>
+                        <div class="col-sm-11"><input type="text" id="team8" class="form-control" style="width:30%; margin-top: 10px;" disabled=""></div>
+                    </div>
+                    <div class="row" style="float: right;">
+                        <button class="btn btn-primary" type="button" onclick="runPool();"><i class="fa fa-futbol-o"></i> <span class="bold">Correr Quiniela</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    function runPool() {
+        var people = ['Juan', 'Alvaro', 'Rams', 'Chris', 'David', 'Miguel', 'Oziel', 'Milton'];
+        var teams = [1, 2, 3, 4, 5, 6, 7, 8];
+
+        for (var i = 0; i < people.length; i++) {
+            var rand = teams[Math.floor(Math.random() * teams.length)];
+            var pool = new Array();
+            var c = 1;
+
+            while (c < 2) {
+                if (pool.indexOf(rand) !== -1) {
+                    // Already exists, choose another team
+                    rand = teams[Math.floor(Math.random() * teams.length)];
+                } else {
+                    // Assign the team
+                    pool.push(rand);
+                    document.getElementById('team' + rand).value = people[i];
+                    var index = teams.indexOf(rand);
+                    teams.splice(index, 1);
+                    c++;
+                }
+            }
+        }
+    }
+    </script>
+</body>
+
+</html>
